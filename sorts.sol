@@ -22,6 +22,28 @@ contract Sorts {
             sortedArray = inputArray;
         }
     }
+      
+    function insertionSort(int[] calldata inputArray) external pure returns(int[] memory sortedArray) {
+        int[] memory notSortedArray = inputArray;
+        uint256 notSortedArrayLength = notSortedArray.length;
+        
+        if (notSortedArrayLength>1){
+            for(uint i = 1; i <= notSortedArrayLength - 1; i++){
+                int moveInt = notSortedArray[i];
+                if(moveInt < notSortedArray[i-1]){
+                    uint j = i;
+                    while(j > 0 && moveInt < notSortedArray[j-1]){
+                        notSortedArray[j] = notSortedArray[j-1];
+                        j--;
+                    }
+                    notSortedArray[j] = moveInt;        
+                }                 
+            }
+            sortedArray = notSortedArray;
+        }else{
+            sortedArray = inputArray;
+        }
+    }
 }
 
-//[5,3,1,8,9,4,6]
+//[5,3,1,8,9,4,7,6,2]
