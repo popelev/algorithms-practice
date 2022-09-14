@@ -1,3 +1,4 @@
 # solidity-sorting-practice
 
-* Bubble Sort Algorithm `Sorts.bubbleSort`. Time: O(N2)
+* Bubble Sort - `Sorts.bubbleSort`. Time: O(N^2)
+* Insertion Sort - `Sorts.insertionSort`. Time: O(N^2)
