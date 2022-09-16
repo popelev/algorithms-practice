@@ -22,4 +22,15 @@ contract Search {
         }
         revert("Input array is not sorted");
     }
+    
+    function findSmallest(int[] memory inputArray, uint maxIndexOfArray) public pure returns(int smallest, uint smallestIndex) {
+        smallest = inputArray[0];
+        smallestIndex = 0;
+        for(uint i = 1; i <= maxIndexOfArray; i++){
+            if (inputArray[i] < smallest){
+                smallest = inputArray[i];
+                smallestIndex = i;
+            }
+        }
+    }
 }
